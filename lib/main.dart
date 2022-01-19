@@ -66,20 +66,24 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
+  Widget _appbarbuilder() {
+    return AppBar(
+      title: Text('Expenses'),
+      actions: [
+        IconButton(
+          onPressed: () {
+            _startAddNewTransaction(context);
+          },
+          icon: Icon(Icons.add),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Expenses'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              _startAddNewTransaction(context);
-            },
-            icon: Icon(Icons.add),
-          ),
-        ],
-      ),
+      appBar: _appbarbuilder(),
       body: SingleChildScrollView(
         child: Column(
           children: [
